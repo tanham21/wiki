@@ -61,51 +61,26 @@ a:hover {
   width:95%;
 }
 .wiki-aside {
-  width: 250px;
-  border-left: 1px solid lightgrey;
-  float:right;
-  padding-left:20px;
+  width: 100%;
 }
 .searchBar {
-  margin-top:10px;
-  margin-bottom:25px;
   width: 100%;
 }
 .articlesList ul {
   list-style: none;
   margin-left: 0;
-  height:82vh;
+  max-height: 10vh;
   overflow-y: scroll;
   text-transform: capitalize;
 }
 
-@media (max-width:700px) {
-  .wiki-aside {
-    display: none;
-  }
-  .wiki-header, .wiki-selector {
-    text-align:center;
-  }
-  .wiki-header span {
-    left:50%;
-    top:60px;
-    transform: translateX(-50%);
-  }
-}
-@media (min-width:701px) {
-  .wiki-selector {
-    display: none;
-  }
-  .wiki-header span {
-    margin-left:10px;
-    top:40px;
-  }
-  .articleContent {
-    width:auto;
-    padding-right:30px;
-    height:88vh;
+@media (max-width:480px) {
+  .articlesList ul {
+    list-style: none;
+    margin-left: 0;
+    max-height: 20vh;
     overflow-y: scroll;
-    margin-top:0;
+    text-transform: capitalize;
   }
 }
 
@@ -116,4 +91,8 @@ a:hover {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.wiki-selector {
+  display: none;
 }
