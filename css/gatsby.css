@@ -61,17 +61,20 @@ a:hover {
   width: 95%;
 }
 .wiki-aside {
-  width: 98%;
+  width: 80%;
+  margin: 0 auto;
 }
 .searchBar {
   width: 100%;
 }
 .articlesList ul {
   list-style: none;
-  padding-left: 10px;
+  padding-left: 0;
   max-height: 10vh;
   overflow-y: scroll;
   text-transform: capitalize;
+  width: 100%;
+  margin: 0 auto;
 }
 .emojione {
   width: 1em;
