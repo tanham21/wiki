@@ -73,6 +73,7 @@ a:hover {
   padding: 5px;
   background-color: lightgray;
   font-size: 20px;
+  color: darkgreen;
 }
 .articlesList ul {
   list-style: none;
