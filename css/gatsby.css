@@ -104,6 +104,24 @@ h1:first-of-type {
 input.searchBar {
   width: 97%;
 }
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: darkgreen;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: darkgreen;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: darkgreen;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: darkgreen;
+}
 @media (max-width:480px) {
   .articlesList ul {
     max-height: 20vh;
