@@ -69,9 +69,10 @@ a:hover {
   border-radius: 5px;
 }
 .searchBar {
-  width: 98%;
+  width: 99%;
   border-style: none;
   padding: 5px;
+  background-color: lightgray;
 }
 .articlesList ul {
   list-style: none;
