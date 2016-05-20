@@ -63,9 +63,11 @@ a:hover {
 .wiki-aside {
   width: 80%;
   margin: 0 auto;
+  border-style: solid;
+  border-color: darkgreen;
 }
 .searchBar {
-  width: 100%;
+  width: 99.7%;
 }
 .articlesList ul {
   list-style: none;
@@ -87,7 +89,11 @@ img {
   display: none;
 }
 .markdown {
-  padding-left: 10px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+h1:first-of-type {
+  text-align: center;
 }
 @media (max-width:480px) {
   .articlesList ul {
