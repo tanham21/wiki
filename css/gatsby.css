@@ -66,10 +66,12 @@ a:hover {
   margin: 0 auto;
   border-style: solid;
   border-color: darkgreen;
+  border-radius: 5px;
 }
 .searchBar {
-  width: 100%;
+  width: 99%;
   border-style: none;
+  padding: 5px;
 }
 .articlesList ul {
   list-style: none;
@@ -79,6 +81,7 @@ a:hover {
   text-transform: capitalize;
   width: 100%;
   margin: 0 auto;
+  padding: 10px;
 }
 .emojione {
   width: 1em;
