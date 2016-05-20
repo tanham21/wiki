@@ -79,7 +79,7 @@ a:hover {
   max-height: 10vh;
   overflow-y: scroll;
   text-transform: capitalize;
-  width: 100%;
+  width: 98%;
   margin: 0 auto;
   padding: 10px;
 }
@@ -107,5 +107,8 @@ h1:first-of-type {
     max-height: 20vh;
     overflow-y: scroll;
     text-transform: capitalize;
+  }
+  .searchBar {
+    width: 97%;
   }
 }
