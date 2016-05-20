@@ -10,11 +10,10 @@ body, html {
   left: 0;
 }
 .wiki-container {
-  max-width: 100%;
   padding: 80px 0 0;
   box-sizing: border-box;
   display: inline-block;
-  width: 100%;
+  width: auto;
   height: 100%;
   margin: 0 auto;
   position: relative;
@@ -73,6 +72,7 @@ a:hover {
   border-style: none;
   padding: 5px;
   background-color: lightgray;
+  font-size: 20px;
 }
 .articlesList ul {
   list-style: none;
@@ -100,6 +100,9 @@ img {
 }
 h1:first-of-type {
   text-align: center;
+}
+input.searchBar {
+  width: 97%;
 }
 @media (max-width:480px) {
   .articlesList ul {
