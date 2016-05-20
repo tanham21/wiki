@@ -67,7 +67,7 @@ a:hover {
   border-color: darkgreen;
 }
 .searchBar {
-  width: 99.9%;
+  width: 99.7%;
 }
 .articlesList ul {
   list-style: none;
@@ -104,6 +104,6 @@ h1:first-of-type {
     text-transform: capitalize;
   }
   .searchBar {
-    width: 99.4%;
+    width: 99.3%;
   }
 }
