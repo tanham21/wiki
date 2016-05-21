@@ -69,11 +69,12 @@ a:hover {
 }
 .searchBar {
   width: auto;
-  border-style: none;
   padding: 5px;
   background-color: lightgray;
   font-size: 20px;
   color: darkgreen;
+  border-color: white;
+  border-style: solid;
 }
 .articlesList ul {
   list-style: none;
@@ -104,6 +105,7 @@ h1:first-of-type {
 }
 input.searchBar {
   width: 97%;
+  border-color: lightgray;
 }
 ::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
