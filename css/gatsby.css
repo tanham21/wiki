@@ -66,6 +66,7 @@ a:hover {
   border-style: solid;
   border-color: darkgreen;
   border-radius: 5px;
+  padding: 10px;
 }
 .searchBar {
   width: auto;
@@ -73,7 +74,7 @@ a:hover {
   background-color: lightgray;
   font-size: 20px;
   color: darkgreen;
-  border-color: white;
+  border-color: lightgray;
   border-style: solid;
 }
 .articlesList ul {
@@ -83,8 +84,6 @@ a:hover {
   overflow-y: scroll;
   text-transform: capitalize;
   width: auto;
-  margin: 0 auto;
-  padding: 10px;
 }
 .emojione {
   width: 1em;
