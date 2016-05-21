@@ -66,7 +66,7 @@ a:hover {
   border-style: solid;
   border-color: darkgreen;
   border-radius: 5px;
-  padding: 10px;
+  padding: 15px 15px 0 15px;
 }
 .searchBar {
   width: auto;
@@ -79,7 +79,7 @@ a:hover {
 }
 .articlesList ul {
   list-style: none;
-  padding-left: 0;
+  padding-left: 15px;
   max-height: 10vh;
   overflow-y: scroll;
   text-transform: capitalize;
