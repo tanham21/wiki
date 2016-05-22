@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0"/><title>Algoritmo Mensaje Secreto | FreeCodeCamp Wiki</title><link rel="shortcut icon"/><link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/><link rel="stylesheet" href="/wiki/styles.css"/></head><body class="landing-page"><div id="react-mount"><div class="wiki-container" data-reactroot="" data-reactid="1" data-react-checksum="1121470401"><div class="article-container" data-reactid="2"><div data-reactid="3"><div class="wiki-aside" data-reactid="4"><div class="searchBar" data-reactid="5"><input type="text" class="searchBar" placeholder="Article search" data-reactid="6"/></div><div class="articlesList" data-reactid="7"><ul data-reactid="8"><li data-reactid="9"><a href="/wiki/es/Algoritmo-Bu/" data-reactid="10">Algoritmo ¡Bu!</a></li><li data-reactid="11"><a href="/wiki/es/Algoritmo-Confirma-La-Terminacin/" data-reactid="12">Algoritmo Confirma la Terminación</a></li><li data-reactid="13"><a href="/wiki/es/Algoritmo-De-Argumentos-Opcionales/" data-reactid="14">Algoritmo de Argumentos Opcionales.</a></li><li data-reactid="15"><a href="/wiki/es/Algoritmo-Mensaje-Secreto/" data-reactid="16"><strong data-reactid="17">Algoritmo Mensaje Secreto</strong></a></li><li data-reactid="18"><a href="/wiki/es/FreeCodeCamp-Poltica-De-Honestidad-Acadmica/" data-reactid="19">Política de Honestidad Académica de Free Code Camp</a></li><li data-reactid="20"><a href="/wiki/es/Puntos-Brownie/" data-reactid="21">Puntos Brownie</a></li><li data-reactid="22"><a href="/wiki/es/Racha/" data-reactid="23">Rachas</a></li><li data-reactid="24"><a href="/wiki/es/FreeCodeCamp-Ventajas/" data-reactid="25">Ventajas de utilizar Free Code Camp</a></li><li data-reactid="26"><a href="/wiki/es/Ventajas-Y-Desventajas-De-JavaScript/" data-reactid="27">Ventajas y desventajas de JavaScript</a></li></ul></div></div><div class="wiki-selector" data-reactid="28"><select data-reactid="29"><option value="/wiki/es/Algoritmo-Bu/" data-reactid="30">Algoritmo ¡Bu!</option><option value="/wiki/es/Algoritmo-Confirma-La-Terminacin/" data-reactid="31">Algoritmo Confirma la Terminación</option><option value="/wiki/es/Algoritmo-De-Argumentos-Opcionales/" data-reactid="32">Algoritmo de Argumentos Opcionales.</option><option selected="" value="/wiki/es/Algoritmo-Mensaje-Secreto/" data-reactid="33">Algoritmo Mensaje Secreto</option><option value="/wiki/es/FreeCodeCamp-Poltica-De-Honestidad-Acadmica/" data-reactid="34">Política de Honestidad Académica de Free Code Camp</option><option value="/wiki/es/Puntos-Brownie/" data-reactid="35">Puntos Brownie</option><option value="/wiki/es/Racha/" data-reactid="36">Rachas</option><option value="/wiki/es/FreeCodeCamp-Ventajas/" data-reactid="37">Ventajas de utilizar Free Code Camp</option><option value="/wiki/es/Ventajas-Y-Desventajas-De-JavaScript/" data-reactid="38">Ventajas y desventajas de JavaScript</option></select></div><div class="articleContent" data-reactid="39"><div class="markdown" data-reactid="40"><h1 data-reactid="41">Algoritmo Mensaje Secreto</h1><div data-reactid="42"><p><img src="https://i.imgur.com/HSwaSFK.jpg" alt=""></p>
+<h3>Explicación:</h3>
+<p>Este problema es muy sencillo, obtendrás una cadena que represente a una frase en código binario, y deberás traducirlo a palabras. No hay forma directa de hacer esto por lo que tendrá que traducir dos veces.</p>
+<h2>Pista: 1</h2>
+<p>Primero debes convertir de <strong>binario</strong> a <strong>decimal</strong> para luego poder traducirlo a caracteres.</p>
+<h2>Pista: 2</h2>
+<p>Las cosas son más fáciles si te centras en partes pequeñas, divide el mensaje lo que recibas y céntrate en una letra la vez.</p>
+<h2>Pista: 3</h2>
+<p>Asegúrate luego de transcodificar un carácter de binario a decimal de restablecer cualquiera de las variantes que utilizaste para realizar la traducción. Asimismo, no te olvides de poner todo de nuevo en una sola cadena.</p>
+<h2>¡Alerta de Spoiler!</h2>
+<p><a href="https://files.gitter.im/FreeCodeCamp/Wiki/nlOm/687474703a2f2f7777772e796f75726472756d2e636f6d2f796f75726472756d2f696d616765732f323030372f31302f31302f7265645f7761726e696e675f7369676e5f322e676966.gif"><img src="https://files.gitter.im/FreeCodeCamp/Wiki/nlOm/thumb/687474703a2f2f7777772e796f75726472756d2e636f6d2f796f75726472756d2f696d616765732f323030372f31302f31302f7265645f7761726e696e675f7369676e5f322e676966.gif" alt="687474703a2f2f7777772e796f75726472756d2e636f6d2f796f75726472756d2f696d616765732f323030372f31302f31302f7265645f7761726e696e675f7369676e5f322e676966.gif"></a></p>
+<p><strong>¡Solución abajo!</strong></p>
+<h2>Solución del código:</h2>
+<pre><code class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">binaryAgent</span>(<span class="hljs-params">str</span>) </span>{
+  biString = str.split(<span class="hljs-string">' '</span>);
+  uniString = [];
+
+  <span class="hljs-comment">// Utilizando el parámetro base en parseInt podemos convertir el número</span>
+  <span class="hljs-comment">// binario a número decimal mientras simultáneamente lo convertimos a carácter.</span>
+
+  <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i &lt; biString.length;i++){
+    uniString.push(<span class="hljs-built_in">String</span>.fromCharCode(<span class="hljs-built_in">parseInt</span>(biString[i], <span class="hljs-number">2</span>))); 
+  }
+  <span class="hljs-comment">// Simplemente unimos la cadena.</span>
+  <span class="hljs-keyword">return</span> uniString.join(<span class="hljs-string">''</span>);
+}
+
+<span class="hljs-comment">// realizamos el test</span>
+binaryAgent(<span class="hljs-string">"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"</span>);
+</code></pre>
+<p><img class="emojione" alt="🚀" src="//cdn.jsdelivr.net/emojione/assets/png/1f680.png?v=2.1.4"/> <a href="https://repl.it/CLnm/0">¡En REPL!</a></p>
+<h1>Explicación del código:</h1>
+<ul>
+<li>Separamos la cadena en una matriz de cadenas separadas por espacios en blanco.</li>
+<li>Creamos una variable que será necesaria a lo largo del camino, el nombre se explica por si mismo.</li>
+<li>Iteramos por la nueva matriz de binarios.</li>
+<li>Convertimos a decimal utilizando parseInt(<em>binario</em>, 2) (con el segundo parámetro le decimos en que base nuestros números están actualmente)</li>
+<li>Al final, retornamos nuestro mensaje convertido.</li>
+</ul>
+<h2>Segunda solución:</h2>
+<pre><code class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">binaryAgent</span>(<span class="hljs-params">str</span>) </span>{
+  <span class="hljs-comment">// Separamos el código binario por sus espacios.</span>
+  str = str.split(<span class="hljs-string">' '</span>);
+  <span class="hljs-keyword">var</span> power;
+  <span class="hljs-keyword">var</span> decValue = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">var</span> sentence = <span class="hljs-string">''</span>;
+
+  <span class="hljs-comment">// Comprobamos cada número binario de la matriz.</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> s = <span class="hljs-number">0</span>; s &lt; str.length; s++) {
+    <span class="hljs-comment">// Comprobamos cada bit del número binario.</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> t = <span class="hljs-number">0</span>; t &lt; str[s].length; t++) {
+      <span class="hljs-comment">// Esto solo toma en consideración los activos.</span>
+      <span class="hljs-keyword">if</span> (str[s][t] == <span class="hljs-number">1</span>) {
+        <span class="hljs-comment">// Esto es equivalente a 2 ** posición.</span>
+        power = <span class="hljs-built_in">Math</span>.pow(<span class="hljs-number">2</span>, +str[s].length - t - <span class="hljs-number">1</span>);
+        decValue += power;
+
+        <span class="hljs-comment">// Guardamos el valor decimal sumándolo al anterior.</span>
+      }
+    }
+
+    <span class="hljs-comment">// Luego de que el número binario es convertido a decimal, lo convertimos en una cadena y lo guardamos.</span>
+    sentence += (<span class="hljs-built_in">String</span>.fromCharCode(decValue));
+
+    <span class="hljs-comment">// Reseteamos el valor decimal para el próximo número binario.</span>
+    decValue = <span class="hljs-number">0</span>;
+  }
+
+  <span class="hljs-keyword">return</span> sentence;
+}
+
+<span class="hljs-comment">// realizamos el test</span>
+binaryAgent(<span class="hljs-string">"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"</span>);
+</code></pre>
+<p><img class="emojione" alt="🚀" src="//cdn.jsdelivr.net/emojione/assets/png/1f680.png?v=2.1.4"/> <a href="https://repl.it/CLno/0">¡En REPL!</a></p>
+<h1>Explicación del código:</h1>
+<ul>
+<li>Para cada cadena binaria comprobamos los unos e ignoramos los ceros.</li>
+<li>Para aquellos que son uno o activo los convertimos en decimal. Esto toma en cuenta la posición y la potencia adecuada a la que tiene que ser elevado.</li>
+<li>Guardamos la potencia en la variable <strong>power</strong> sumándolo a los anteriores unos en la variable <strong>decValue</strong>. Esta variable continuará sumando las potencias de los unos activos hasta el final del bucle y luego retornará un número decimal.</li>
+<li>Convertimos el número decimal final en ASCII y lo añadimos a la variable <strong>sentence</strong> junto con cualquier otra cadena de texto ya convertida y almacenado.</li>
+<li>Restablecemos el valor de la variable <strong>decValue</strong> para evitar decimales equivocadas antes de continuar con el bucle externo.cara</li>
+</ul>
+<h2>Tercera solución:</h2>
+<pre><code class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">binaryAgent</span>(<span class="hljs-params">str</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">String</span>.fromCharCode(...str.split(<span class="hljs-string">" "</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">char</span>)</span>{ <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseInt</span>(char, <span class="hljs-number">2</span>); }));
+}
+
+<span class="hljs-comment">// realizamos el test</span>
+binaryAgent(<span class="hljs-string">"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"</span>);
+</code></pre>
+<p><img class="emojione" alt="🚀" src="//cdn.jsdelivr.net/emojione/assets/png/1f680.png?v=2.1.4"/> <a href="https://repl.it/CLnp/0">¡En REPL!</a></p>
+<h1>Explicación del código:</h1>
+<ul>
+<li>Primero utilizamos <code>split()</code> para poder trabajar cada carácter como un elemento de matriz.</li>
+<li>Luego utilizamos <code>map()</code> para procesar cada elemento binario a decimal utilizando <code>pareseInt()</code></li>
+<li>Finalmente podemos utilizar <code>String.fromCharCode()</code> para convertir cada número ASCII a su correspondiente carácter.</li>
+<li>Sin embargo <code>fromCharCode()</code> espera una serie de números en lugar de una matriz. Podemos utilizar ES6 Spread Operator para pasar una matriz de números como números individuales. Más información: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator</a></li>
+</ul>
+<h2>Cuarta solución:</h2>
+<pre><code class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">binaryAgent</span>(<span class="hljs-params">str</span>) </span>{
+  <span class="hljs-keyword">var</span> re = <span class="hljs-regexp">/(\d+)(\s?)/g</span>;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">convertToChar</span>(<span class="hljs-params">match,p1,p2</span>)</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">String</span>.fromCharCode(<span class="hljs-built_in">parseInt</span>(p1, <span class="hljs-number">2</span>));
+  }
+  <span class="hljs-keyword">return</span> str.replace(re, convertToChar);
+}
+
+<span class="hljs-comment">// realizamos el test</span>
+binaryAgent(<span class="hljs-string">"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"</span>);
+</code></pre>
+<p><img class="emojione" alt="🚀" src="//cdn.jsdelivr.net/emojione/assets/png/1f680.png?v=2.1.4"/> <a href="https://repl.it/CLnr/0">¡En REPL!</a></p>
+<h1>Explicación del código:</h1>
+<ul>
+<li>En esta solución utilizamos <code>String.replace()</code> para encontrar todos los números binarios y los convertimos en caracteres.</li>
+<li>En primer lugar utilizamos una expresión regular para encontrar todos los números binarios y los espacios finales opcionales.</li>
+<li>A continuación, definimos una función que convierte cada primer subcoincidencia a número con <code>parseInt()</code> y luego en un carácter con <code>String.fromCharCode()</code>. Al no utilizar la segunda subcoincidencia dejamos de lado todos los espacios que se encuentran entre cada número binario.</li>
+<li>Por último utilizamos nuestra expresión regular y la función definida como parámetro de <code>String.replace()</code>.</li>
+</ul>
+<h1>Créditos:</h1>
+<p>Si encuentras útil este artículo puedes dar las gracias copiando y pegando este mensaje en el chat principal: <strong><code>thanks @Rafase282 @JamesKee @sabahang @crisvdkooij for your help with Algorithm: Binary Agents</code></strong></p>
+<blockquote>
+<p><strong>NOTA:</strong> Por favor añade tu nombre de usuario solamente si has añadido <strong>contenido relevante</strong> al artículo. (Por favor no remuevas ningún nombre existente.)</p>
+</blockquote>
+</div></div></div></div></div></div></div><script src="/wiki/bundle.js"></script></body></html>
