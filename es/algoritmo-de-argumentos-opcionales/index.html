@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0"/><title>Algoritmo de Argumentos Opcionales. | FreeCodeCamp Wiki</title><link rel="shortcut icon"/><link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/><link rel="stylesheet" href="/wiki/styles.css"/></head><body class="landing-page"><div id="react-mount"><div class="wiki-container" data-reactroot="" data-reactid="1" data-react-checksum="803094119"><div class="article-container" data-reactid="2"><div data-reactid="3"><div class="wiki-aside" data-reactid="4"><div class="searchBar" data-reactid="5"><input type="text" class="searchBar" placeholder="Article search" data-reactid="6"/></div><div class="articlesList" data-reactid="7"><ul data-reactid="8"><li data-reactid="9"><a href="/wiki/es/algoritmo-bu/" data-reactid="10">Algoritmo ¡Bu!</a></li><li data-reactid="11"><a href="/wiki/es/algoritmo-confirma-la-terminacin/" data-reactid="12">Algoritmo Confirma la Terminación</a></li><li data-reactid="13"><a href="/wiki/es/algoritmo-de-argumentos-opcionales/" data-reactid="14"><strong data-reactid="15">Algoritmo de Argumentos Opcionales.</strong></a></li><li data-reactid="16"><a href="/wiki/es/algoritmo-mensaje-secreto/" data-reactid="17">Algoritmo Mensaje Secreto</a></li><li data-reactid="18"><a href="/wiki/es/freecodecamp-poltica-de-honestidad-acadmica/" data-reactid="19">Política de Honestidad Académica de Free Code Camp</a></li><li data-reactid="20"><a href="/wiki/es/puntos-brownie/" data-reactid="21">Puntos Brownie</a></li><li data-reactid="22"><a href="/wiki/es/racha/" data-reactid="23">Rachas</a></li><li data-reactid="24"><a href="/wiki/es/freecodecamp-ventajas/" data-reactid="25">Ventajas de utilizar Free Code Camp</a></li><li data-reactid="26"><a href="/wiki/es/ventajas-y-desventajas-de-javascript/" data-reactid="27">Ventajas y desventajas de JavaScript</a></li></ul><div class="fadeout" data-reactid="28"></div></div></div><div class="wiki-selector" data-reactid="29"><select data-reactid="30"><option value="/wiki/es/algoritmo-bu/" data-reactid="31">Algoritmo ¡Bu!</option><option value="/wiki/es/algoritmo-confirma-la-terminacin/" data-reactid="32">Algoritmo Confirma la Terminación</option><option selected="" value="/wiki/es/algoritmo-de-argumentos-opcionales/" data-reactid="33">Algoritmo de Argumentos Opcionales.</option><option value="/wiki/es/algoritmo-mensaje-secreto/" data-reactid="34">Algoritmo Mensaje Secreto</option><option value="/wiki/es/freecodecamp-poltica-de-honestidad-acadmica/" data-reactid="35">Política de Honestidad Académica de Free Code Camp</option><option value="/wiki/es/puntos-brownie/" data-reactid="36">Puntos Brownie</option><option value="/wiki/es/racha/" data-reactid="37">Rachas</option><option value="/wiki/es/freecodecamp-ventajas/" data-reactid="38">Ventajas de utilizar Free Code Camp</option><option value="/wiki/es/ventajas-y-desventajas-de-javascript/" data-reactid="39">Ventajas y desventajas de JavaScript</option></select></div><div class="articleContent" data-reactid="40"><div class="markdown" data-reactid="41"><h1 data-reactid="42">Algoritmo de Argumentos Opcionales.</h1><div data-reactid="43"><p><img src="https://i.imgur.com/63Iaec6.jpg" alt=""></p>
+<h3>Explicación:</h3>
+<p>Puede ser un poco complicado entender lo que se debe hacer. Cuando programamos existen diferentes maneras de realizar algo. Sin importar el algoritmo utilizado necesitamos crear una función que realice lo siguiente:</p>
+<ul>
+<li>Tiene que sumar dos números recibidos como parámetros y retornar el resultado.</li>
+<li>Tiene que comprobar que ambos números sean realmente números, en caso contrario retornar <strong>undefined</strong> y detener la función en el momento.</li>
+<li>Tiene que comprobar que los argumentos recibidos sean uno o dos. Si hay más deben ser ignorados.</li>
+<li>Si sólo es recibido un argumento se debe retornar una función que acepte otro argumento para luego realizar la suma.</li>
+</ul>
+<h2>Pista: 1</h2>
+<p>Cada vez que trabajas un argumento debes comprobar si es realmente un número o no. Para evitar repetir código deberías crear una función que se ocupe de esta tarea.</p>
+<h2>Pista: 2</h2>
+<p>Cuando se de el caso que sea necesario retornar la función es aconsejable comprobar si el primer y único argumento es un número de nuevo y basar el código en eso.</p>
+<h2>Pista: 3</h2>
+<p>En el caso de que se reciba sólo un argumento no te preocupes sobre como solicitar el segundo, simplemente haz la definición de la función apropiadamente y todo funcionará como debería.</p>
+<h2>¡Alerta de Spoiler!</h2>
+<p><img src="https://files.gitter.im/FreeCodeCamp/Wiki/nlOm/thumb/687474703a2f2f7777772e796f75726472756d2e636f6d2f796f75726472756d2f696d616765732f323030372f31302f31302f7265645f7761726e696e675f7369676e5f322e676966.gif" alt="687474703a2f2f7777772e796f75726472756d2e636f6d2f796f75726472756d2f696d616765732f323030372f31302f31302f7265645f7761726e696e675f7369676e5f322e676966.gif"></p>
+<p><strong>¡Solución abajo!</strong></p>
+<h2>Solución del código:</h2>
+<pre><code class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addTogether</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Función para comprobar si un número es realmente un número</span>
+  <span class="hljs-comment">// y retornar undefined en caso contrario.</span>
+  <span class="hljs-keyword">var</span> checkNum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">num</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> num !== <span class="hljs-string">'number'</span>) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
+    } <span class="hljs-keyword">else</span>
+      <span class="hljs-keyword">return</span> num;
+  };
+
+  <span class="hljs-comment">// Comprobar si tenemos dos parámetros y si ambos son números</span>
+  <span class="hljs-comment">// En caso que no lo sean retornamos undefined</span>
+  <span class="hljs-comment">// retornamos la suma</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">arguments</span>.length &gt; <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">var</span> a = checkNum(<span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>]);
+    <span class="hljs-keyword">var</span> b = checkNum(<span class="hljs-built_in">arguments</span>[<span class="hljs-number">1</span>]);
+    <span class="hljs-keyword">if</span> (a === <span class="hljs-literal">undefined</span> || b === <span class="hljs-literal">undefined</span>) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> a + b;
+    }
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// Si solo es encontrado un parámetro retornamos una nueva función para solicitar un segundo parámetro</span>
+    <span class="hljs-comment">// Guardamos el primer argumento antes de entrar al scope de la nueva función</span>
+    <span class="hljs-keyword">var</span> c = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>];
+
+    <span class="hljs-comment">// Comprobamos que sea número de nuevo, debe ser fuera del objeto que retornaremos</span>
+    <span class="hljs-comment">// en lugar de undefined.</span>
+    <span class="hljs-keyword">if</span> (checkNum(c)) {
+      <span class="hljs-comment">// // Retornamos la función que espera el segundo parámetro.</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">arg2</span>) </span>{
+        <span class="hljs-comment">// Comprobamos que no sean números.</span>
+        <span class="hljs-keyword">if</span> (c === <span class="hljs-literal">undefined</span> || checkNum(arg2) === <span class="hljs-literal">undefined</span>) {
+          <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
+        } <span class="hljs-keyword">else</span> {
+          <span class="hljs-comment">// Si lo son, sumamos.</span>
+          <span class="hljs-keyword">return</span> c + arg2;
+        }
+      };
+    }
+  }
+}
+
+<span class="hljs-comment">// realizamos el test</span>
+addTogether(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>);
+</code></pre>
+<p><img class="emojione" alt="🚀" src="//cdn.jsdelivr.net/emojione/assets/png/1f680.png?v=2.1.4"/> <a href="https://repl.it/CLnz/0">¡En REPL!</a></p>
+<h3>Explicación del código:</h3>
+<ul>
+<li>Primero creamos una función con el solo propósito de comprobar si un número es realmente un número y retornamos undefined si no lo es. Utiliza <strong>typeof</strong> para comprobar.</li>
+<li>Comprobamos si tenemos dos parámetros, si tenemos, comprobamos que si son números o no utilizando la función <strong>checkNum</strong>.</li>
+<li>Si los parámetros no son <strong>undefined</strong> los sumamos y retornamos la suma. Si uno de ellos es undefined entonces retornamos undefined.</li>
+<li>En caso que solo tengamos un argumento entonces retornamos una nueva función que espera dos parámetros. Para esto almacenamos el segundo parámetro antes de entrar a la función para evitar sobrescribir el argumento.</li>
+<li>Aún dentro del primer <em>else</em> necesitamos comprobar que el argumento guardado es un número, si lo es entonces retornamos la función esperando el segundo argumento.</li>
+<li>Ahora dentro de la función que retornaremos tenemos que comprobar que el nuevo parámetro sea un número utilizando <strong>checkNum</strong>, si es undefined retornaremos eso y encaso contrario sumaremos los números y retornaremos el resultado.</li>
+</ul>
+<h2>Segunda solución:</h2>
+<pre><code class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addTogether</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> args = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-built_in">arguments</span>.length);
+  <span class="hljs-comment">// Almacenamos los argumentos en un array.</span>
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; args.length; ++i) {
+    args[i] = <span class="hljs-built_in">arguments</span>[i];
+  }
+  <span class="hljs-comment">// Comprobamos la cantidad de argumentos.</span>
+  <span class="hljs-keyword">if</span>(args.length == <span class="hljs-number">2</span>){
+    <span class="hljs-comment">// Si hay dos argumentos, comprobamos el tipo de ambos</span>
+    <span class="hljs-comment">// Utiliza typeof para comprobar el tipo de argumentos. (ambos deben ser números)</span>
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> args[<span class="hljs-number">0</span>] !== <span class="hljs-string">'number'</span> || <span class="hljs-keyword">typeof</span> args[<span class="hljs-number">1</span>] !==<span class="hljs-string">'number'</span> ){
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
+    }
+    <span class="hljs-keyword">return</span> args[<span class="hljs-number">0</span>]+args[<span class="hljs-number">1</span>];
+  }
+  <span class="hljs-comment">// Cuando solo un argumento es provisto.</span>
+  <span class="hljs-keyword">if</span>(args.length == <span class="hljs-number">1</span>){
+    a = args[<span class="hljs-number">0</span>];
+    <span class="hljs-comment">// Comprobamos el tipo utilizando typeof.</span>
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> a!==<span class="hljs-string">'number'</span>){
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
+    }
+    <span class="hljs-keyword">else</span>{
+      <span class="hljs-comment">// Hacemos uso de las funciones internas.</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">b</span>)</span>{
+      <span class="hljs-comment">// Comprobamos el segundo parámetro.</span>
+      <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> b !==<span class="hljs-string">'number'</span>){
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
+      }
+      <span class="hljs-keyword">else</span>
+        <span class="hljs-keyword">return</span> a+b;
+      };
+    }
+  }
+}
+
+<span class="hljs-comment">// realizamos el test</span>
+addTogether(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>);
+</code></pre>
+<p><img class="emojione" alt="🚀" src="//cdn.jsdelivr.net/emojione/assets/png/1f680.png?v=2.1.4"/> <a href="https://repl.it/CLoA/0">¡En REPL!</a></p>
+<h2>Tercer solución:</h2>
+<pre><code class="language-javascript"><span class="hljs-comment">//jshint esversion: 6</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addTogether</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> args = <span class="hljs-built_in">Array</span>.from(<span class="hljs-built_in">arguments</span>);
+  <span class="hljs-keyword">return</span> args.some(n =&gt; <span class="hljs-keyword">typeof</span> n !== <span class="hljs-string">'number'</span>) ? 
+    <span class="hljs-literal">undefined</span>: 
+    args.length &gt; <span class="hljs-number">1</span> ?
+      args.reduce((acc, n) =&gt; acc += n, <span class="hljs-number">0</span>):
+      (n) =&gt; <span class="hljs-keyword">typeof</span> n === <span class="hljs-string">"number"</span> ? 
+        n + args[<span class="hljs-number">0</span>]:
+        <span class="hljs-literal">undefined</span>;
+}
+
+<span class="hljs-comment">// realizamos el test</span>
+addTogether(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>);
+</code></pre>
+<p><img class="emojione" alt="🚀" src="//cdn.jsdelivr.net/emojione/assets/png/1f680.png?v=2.1.4"/> <a href="https://repl.it/CLoB/0">¡En REPL!</a></p>
+<h3>Explicación del código:</h3>
+<ul>
+<li>Primero iteramos los argumentos y comprobamos que sean números y si no lo son retornamos undefined.</li>
+<li>Luego comprobamos que la cantidad de argumento sea mayor a 1, si lo es sumamos los argumentos utilizando <code>Array.prototype.reduce</code></li>
+<li>Caso contrario retornamos una función que compruebe que el parámetro recibido sea número y lo suma, si no retornamos undefined.</li>
+</ul>
+<h1>Créditos:</h1>
+<p>Si encuentras útil este artículo puedes dar las gracias copiando y pegando este mensaje en el chat principal: <strong><code>thanks @Rafase282 @coded9 for your help with Algorithm: Arguments Optional</code></strong></p>
+<blockquote>
+<p><strong>NOTA:</strong> Por favor añade tu nombre de usuario solamente si has añadido <strong>contenido relevante</strong> al artículo. (Por favor no remuevas ningún nombre existente.)</p>
+</blockquote>
+</div></div></div></div></div></div></div><script src="/wiki/bundle.js"></script></body></html>
